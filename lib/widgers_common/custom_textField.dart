@@ -10,6 +10,8 @@ Widget customTextField({String? title, String? hintText, controller}){
       5.heightBox,
       TextFormField(
         controller: controller,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+
         decoration:  InputDecoration(
           hintStyle: const TextStyle(fontFamily: semibold,color: textfieldGrey),
           hintText: hintText,

@@ -1,7 +1,8 @@
 import 'package:emart_app_ui/consts/consts.dart';
 import 'package:emart_app_ui/consts/list.dart';
+import 'package:emart_app_ui/controller/login_controller.dart';
 import 'package:emart_app_ui/views/auth_screen/sign_up_screen.dart';
-import 'package:emart_app_ui/views/home_screen/home_screen.dart';
+import 'package:emart_app_ui/views/home_screen/home.dart';
 import 'package:emart_app_ui/widgers_common/app_logo_widget.dart';
 import 'package:emart_app_ui/widgers_common/bg_widgets.dart';
 import 'package:emart_app_ui/widgers_common/custom_textField.dart';
@@ -15,6 +16,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return bgWidget(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -43,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                     color: redColor,
                     textColor: whiteColor,
                     onPress: () {
-                      Get.to(()=> const HomeScreen());
+                      Get.to(()=> const Home());
                     },
                   ).box.width(context.screenWidth - 50).make(),
                   5.heightBox,
