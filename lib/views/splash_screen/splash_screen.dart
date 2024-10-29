@@ -1,4 +1,4 @@
-import 'dart:async';
+
 
 import 'package:emart_app_ui/consts/consts.dart';
 import 'package:emart_app_ui/views/auth_screen/login_screen.dart';
@@ -16,18 +16,19 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  // Creating a method for change the screen
-  changeScreen(){
-    Future.delayed(const Duration(seconds: 3),(){
-      Get.to(()=> const LoginScreen());
-
+  changeScreen() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.off(() => const LoginScreen());
     });
   }
+
 
   @override
   void initState() {
     // TODO: implement initState
-    changeScreen();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      changeScreen();
+    });
     super.initState();
   }
 

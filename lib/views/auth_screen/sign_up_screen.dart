@@ -38,13 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   customTextField(title: email, hintText: emailHint),
                   customTextField(title: password, hintText: passwordHint),
                   customTextField(title: retypePassword, hintText: passwordHint),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: forgetPassword.text.make(),
-                    ),
-                  ),
+                  10.heightBox,
 
                   Row(children: [
                     Checkbox(
