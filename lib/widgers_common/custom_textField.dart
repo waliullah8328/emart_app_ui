@@ -1,7 +1,7 @@
 import 'package:emart_app_ui/consts/consts.dart';
 
 
-Widget customTextField({String? title, String? hintText, controller}){
+Widget customTextField({String? title, String? hintText, controller,isPass = false}){
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -9,6 +9,7 @@ Widget customTextField({String? title, String? hintText, controller}){
      title!.text.color(redColor).fontFamily(semibold).size(16).make(),
       5.heightBox,
       TextFormField(
+        obscureText: isPass,
         controller: controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
 

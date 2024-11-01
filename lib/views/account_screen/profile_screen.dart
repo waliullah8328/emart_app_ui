@@ -1,7 +1,11 @@
 import 'package:emart_app_ui/consts/list.dart';
+import 'package:emart_app_ui/controller/auth_controller.dart';
 import 'package:emart_app_ui/views/account_screen/common/details_card.dart';
+import 'package:emart_app_ui/views/account_screen/edit_profile.dart';
+import 'package:emart_app_ui/views/auth_screen/login_screen.dart';
 import 'package:emart_app_ui/widgers_common/bg_widgets.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 import '../../consts/consts.dart';
 
@@ -22,6 +26,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topRight,
                     child: Icon(Icons.edit,color: whiteColor,)).onTap(() {
+                      Get.to(()=>EditProfileScreen());
 
                 }),
               ),
@@ -45,7 +50,10 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       ),
-                        onPressed: (){}, child: logout.text.fontFamily(semibold).white.make())
+                        onPressed: () async {
+                       await  Get.put(AuthController()).signoutMethod();
+                       Get.offAll(()=>const LoginScreen());
+                        }, child: logout.text.fontFamily(semibold).white.make())
                   ],
                 ),
               ),
