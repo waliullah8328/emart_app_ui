@@ -71,6 +71,7 @@ flutter:
     - assets/
     - assets/icons/
     - assets/images/
+    - lib/views/services/category_model.json
 
 
   fonts:
